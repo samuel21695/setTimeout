@@ -3,7 +3,7 @@ setTimeout(function() {
 }, 3000);
 setTimeout(function() {
   console.log('두번째 문기');
-}, 3000);
+}, 2000);
 setTimeout(function() {
   console.log('세번째 민구');
-}, 3000);
+}, 1000);
