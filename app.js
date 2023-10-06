@@ -20,7 +20,7 @@
 
 // sosa();
 
-setInterval(function() {}, 1000);
 setInterval(function() {
+  setInterval(function() {}, 1000);
   console.log("이따 향마루 ㄱ?")
 })
