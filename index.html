@@ -14,6 +14,24 @@
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+
+  <script>
+    const sosa = document.getElementById('sosa');
+    console.log(sosa);
+    sosa.style.width = "100px";
+    sosa.style.height = "100px";
+    sosa.style.background = "black";
+    sosa.style.position = "absolute";
+    
+    let topValue = 0;
+    
+    setInterval(function() {
+      sosa.style.top = topValue + "px";
+      topValue++;
+    }, 100);
+  </script>
 </body>
 </html>
