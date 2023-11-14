@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: bisque;
+      /* background-image: url(./happtcat.gif); */
+    }
+    #sosa {
+            background-image: url(./happtcat.gif);
+            background-position: center;
+            background-size: 100px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+
+  <script>
+    const sosa = document.getElementById('sosa');
+    console.log(sosa);
+    sosa.style.width = "100px";
+    sosa.style.height = "100px";
+    sosa.style.background = "black";
+    sosa.style.position = "absolute";
+    
+    let topValue = 0;
+    
+    // setinterval 설정
+    let interval = setInterval(function() {
+      sosa.style.top = topValue + "px";
+      sosa.style.left = topValue + "px";
+      topValue++;
+      console.log(topValue)
+      if (topValue > 500) {
+        sosa.style.backgroundImage = "url(./happtcat.gif)";
+        sosa.style.backgroundSize = "100px";
+        topValue = 0;
+      } 
+    }, 20);
+
+    // 마우스 클릭시, interval 중단/재시작
+    let toggle = true;
+    
+    sosa.addEventListener("click", function(){
+      if(toggle){
+        // 반복 중단
+        clearInterval(interval);
+        toggle = false;
+      } else {
+        // 반복 재개
+        interval = setInterval(function() {
+          sosa.style.top = topValue + "px";
+          sosa.style.left = topValue + "px";
+          topValue++;
+          console.log(topValue)
+          if (topValue > 500) {
+            sosa.style.backgroundImage = "url(./happtcat.gif)";
+            sosa.style.backgroundSize = "100px";
+            topValue = 0;
+          } 
+        }, 20);
+        toggle = true;
+      }
+    })
+    
+    
+  </script>
+</body>
+</html>
